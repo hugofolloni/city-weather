@@ -1,12 +1,14 @@
-import { useState } from 'react'
-import Skycons from 'react-skycons'
+import {ThemeProvider} from "styled-components";
+import { GlobalStyles } from "./globalStyles";
+import { nightTheme, dayTheme } from "./theme";
+import { useState } from "react"
+
 
 const Home = () => {
-
     const [locality, setLocality] = useState('Mars')
     const [temperature, setTemperature] = useState('-273')
     const [scale, setScale] = useState('°C')
-    const [summary, setSummary] = useState(null)
+    const [summary, setSummary] = useState("JK, we're getting your location, wait a sec please!")
     const [icon, setIcon] = useState(null)
 
     const getWeather = () => {
@@ -51,7 +53,40 @@ const Home = () => {
         }
     }
 
+    const [isDay, setIsDay] = useState(0)
+
+    const getIsDay = () => {
+      if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(position => {
+            const long = position.coords.longitude;
+            const lat = position.coords.latitude;
+  
+            var proxy = 'https://the-cors.herokuapp.com/';
+            var isdayapi = `${proxy}http://api.weatherapi.com/v1/current.json?key= 22370fad94b44b3c94300446211806&q=${lat},${long}&aqi=no`;
+  
+            fetch(isdayapi)
+            .then((res) =>{
+              return res.json()
+            })
+            .then((data) =>{
+              console.log(data.current.is_day)
+              setIsDay(data.current.is_day)
+            })
+        })
+      }}
+  
+    const [theme, setTheme] = useState('light');
+  
+    const themeToggler = () => {
+      getIsDay()
+      isDay === 0 ? setTheme('dark') : setTheme('light')
+  }
+  
+    window.addEventListener('load', themeToggler)
+
     return ( 
+        <ThemeProvider theme={theme === 'dark' ? nightTheme : dayTheme}>
+        <GlobalStyles/>
         <div className="home">
             <div className="localityLabel">
                 <h2 className="locality"> { locality } </h2>
@@ -64,6 +99,7 @@ const Home = () => {
                 <p> { summary } </p>
             </div>
         </div>
+        </ThemeProvider>
      );
 }
  

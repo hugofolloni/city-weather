@@ -17,12 +17,13 @@
   margin-top: 5vh;
 }
 
-.timer {
+.timer a {
   color: #eaeaea;
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 40vw;
+  text-decoration: none;
 }
 
 .input{
@@ -31,13 +32,12 @@
   justify-content: center;
 }
 
-.input input, .input button{
+.input input, .input a{
   background-color: #1c1c1c;
   border: #9c9c9a 2px solid;
   border-radius: 20px;
   color: #eaeaea;
   outline: none;
-  padding: 10px;
 }
 
 .input input {
@@ -45,16 +45,21 @@
   padding-left: 30px;
   margin-right: 15px;
   width: 40%;
+  padding: 10px;
 }
 
-.input button{
+.input a{
   cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20%;
   transition: 0.5s ease all;
   font-weight: 700;
 }
 
-.input button:hover{
+.input a:hover{
   color: #1c1c1c;
   background-color: #9c9a9a;
   border: #1c1c1c 2px solid;

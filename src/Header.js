@@ -12,18 +12,22 @@ const Header = () => {
             setMinuteTime(String(today.getMinutes()).padStart(2, '0'))
         }, 1000)
     });
+
+    const [searchTo, setSearchTo] = useState(null)
     
 
     return (
         <div className="header">
             <div className="timer">
-                <h1> { hourTime } </h1>
-                <h1>:</h1>
-                <h1> { minuteTime }</h1>
+                <a href="/">
+                    <h1> { hourTime } </h1> 
+                    <h1>:</h1>  
+                    <h1> { minuteTime }</h1>        
+                </a>
             </div>
             <div className="input">
-                <input type="text" />
-                <button>Search</button>
+                <input type="text" onChange={(e) => setSearchTo(e.target.value)} />
+                <a href={`q/${searchTo}`}>Search</a>
             </div>
         </div> 
     );
