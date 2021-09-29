@@ -53,8 +53,6 @@ const Home = () => {
         }
     }
 
-    const [isDay, setIsDay] = useState(0)
-
     const getIsDay = () => {
       if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position => {
