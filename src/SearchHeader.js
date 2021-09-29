@@ -45,6 +45,12 @@ const SearchHeader = () => {
             }
         })}
 
+    const handleEnter = (event) => {
+        if (event.key === 'Enter') {
+            window.location.href = `../q/${ searchTo }`
+        }
+    }
+
     return (
         <div className="header">
             <div className="timer">
@@ -55,8 +61,8 @@ const SearchHeader = () => {
                 </a>
             </div>
             <div className="input">
-                <input type="text" onChange={(e) => setSearchTo(e.target.value)} />
-                <a href={`../q/${searchTo}`}>Search</a>
+                <input type="text" onChange={ (e) => setSearchTo(e.target.value) } onKeyDown={ handleEnter } /> 
+                <a href={`../q/${ searchTo }`}>Search</a>
             </div>
         </div> 
     );
