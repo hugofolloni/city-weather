@@ -1,3 +1,7 @@
+body{
+  margin: 0;
+}
+
 .App {
   width: 100vw;
   height: 100vh;
@@ -79,6 +83,15 @@
 .localityLabel h2 {
   font-size: 35px;
   font-weight: 700;
+}
+
+.localityLabel{
+  display: flex;
+  flex-direction: row;
+  width: 30vw;
+  margin-left: 10vw;
+  justify-content: space-around;
+  margin-bottom: 10vh;
 }
 
 .temperatureLabel{

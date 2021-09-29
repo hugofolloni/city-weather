@@ -56,7 +56,7 @@ const SearchHeader = () => {
             </div>
             <div className="input">
                 <input type="text" onChange={(e) => setSearchTo(e.target.value)} />
-                <a href={`q/${searchTo}`}>Search</a>
+                <a href={`../q/${searchTo}`}>Search</a>
             </div>
         </div> 
     );

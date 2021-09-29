@@ -2,6 +2,7 @@ import {ThemeProvider} from "styled-components";
 import { GlobalStyles } from "./globalStyles";
 import { nightTheme, dayTheme } from "./theme";
 import { useState } from "react"
+import Skycons from 'react-skycons'
 
 
 const Home = () => {
@@ -34,11 +35,11 @@ const Home = () => {
                     setTemperature(celsiusTemperature);
                     setLocality(data[1].locality);
                     setSummary(data[0].currently.summary);
+                    var currentIcon = data[0].currently.icon.replace(/-/g, "_").toUpperCase()
+                    setIcon(currentIcon)   
                 })}
-            )}
-
+        )}
     }
-
 
     window.addEventListener('load', getWeather);
 
@@ -90,7 +91,13 @@ const Home = () => {
         <div className="home">
             <div className="localityLabel">
                 <h2 className="locality"> { locality } </h2>
-                <canvas className='icon'></canvas>
+                {icon && <Skycons
+                    color="white"
+                    type={icon}
+                    animate={true}
+                    size={128}
+                    resizeClear={true}
+                 />}
             </div>
             <div className="temperatureLabel" onClick={ changeScale }>
                 <h3> { temperature } { scale } </h3>
