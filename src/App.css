@@ -46,10 +46,10 @@ body{
 
 .input input {
   height: 5vh;
-  padding-left: 30px;
   margin-right: 15px;
   width: 40%;
   padding: 10px;
+  padding-left: 25px;
 }
 
 .input a{
