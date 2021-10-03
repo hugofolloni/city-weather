@@ -20,7 +20,7 @@ The user can enter the website and see the weather for his current position. Als
 ![image](https://user-images.githubusercontent.com/82226141/135192701-001b77d6-e0c5-4a48-b802-8ec5635360e4.png)
 
 
-## 🕹️ TECHNOLOGIES
+## 🕹️ Technologies
 
 - React
 - JSON-server 
