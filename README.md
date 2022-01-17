@@ -27,10 +27,14 @@ The user can enter the website and see the weather for his current position. Als
 
 ### APIs:
 
-· cors-anywhere: usado para conseguir acessar dados de uma API externa e mostrá-los no site.
+· cors-anywhere: used to get data from an external API and show it on the site.
 
-· bigdatacloud: consigo a localização do usuário (país, bairro, cidade...) com base na geolocalização do navegador.
+· bigdatacloud: i get the location of the user (country, neighborhood, city...) based on the geolocation of the browser.
 
-· darksky: consigo a temperatura e icone (aquele que fica girando) da localização (pelo navegador ou pesquisa).
+· darksky: i get the temperature and the icon of the place (by the browser or search).
 
-· weatherapi: consigo informação se já amanheceu/anoiteceu (para o primeiro caso) e consigo a localização do usuário quando pesquisado.
+· weatherapi: i get the information if it's day or night on the place and the location of the user when searched.
+
+### Live:
+
+I have the old Vanilla JS version of the project that stills working and it's available to visit [here](https://cityweather-info.herokuapp.com/index.html).
