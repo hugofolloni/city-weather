@@ -37,4 +37,6 @@ The user can enter the website and see the weather for his current position. Als
 
 ### Live:
 
-I have the old Vanilla JS version of the project that stills working and it's available to visit [here](https://cityweather-info.herokuapp.com/index.html).
+You can check this project running [here](https://city-weather-live.netlify.app).
+
+I have the old Vanilla JS version of the project too, that stills working,  and it's available to visit [here](https://cityweather-info.herokuapp.com/index.html).
